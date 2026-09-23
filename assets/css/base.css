@@ -1,0 +1,26 @@
+/* 基本要素と最小限のリセット。Mobile Firstで拡張する。 */
+/* Custom Propertiesは設計確定後に:rootへ追加する。
+   分類予定: color / font / spacing。色・フォントの値は未確定。 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,13 @@
+# ローカルの環境変数・秘密情報
+.env
+.env.*
+!.env.example
+
+# OS・エディタのローカルファイル
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
