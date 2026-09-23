@@ -1,5 +1,7 @@
-// 共通初期化の入口。各UIの実装後、このモジュールから初期化する。
-import './navigation.js';
+// ES ModulesはHTML解析後に実行される。要素がないページでも安全に初期化する。
+import { initNavigation } from './navigation.js';
 import './reservation.js';
 import './accordion.js';
 import './form.js';
+
+initNavigation();

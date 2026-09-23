@@ -1,6 +1,26 @@
-/* 基本要素と最小限のリセット。Mobile Firstで拡張する。 */
-/* Custom Propertiesは設計確定後に:rootへ追加する。
-   分類予定: color / font / spacing。色・フォントの値は未確定。 */
+/* PHASE 7-03の暫定トークン。ブランド色・フォントの確定後にここで調整。 */
+:root {
+  --color-white: #fff;
+  --color-surface: #f7f6f2;
+  --color-text: #252525;
+  --color-muted: #595959;
+  --color-line: #d7d4cc;
+  --color-accent: #f3be4b;
+  --color-focus: #76530b;
+  --font-ui: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 5rem;
+  --content-width: 76rem;
+  --text-width: 44rem;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --header-height: 5rem;
+  --mobile-cta-space: 7rem;
+}
 
 *,
 *::before,
@@ -10,7 +30,19 @@
 
 body {
   margin: 0;
+  color: var(--color-text);
+  background: var(--color-white);
+  font-family: var(--font-ui);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
 }
+
+html { scroll-padding-top: calc(var(--header-height) + 1rem); }
+h1, h2, h3, p { margin: 0; }
+a { color: inherit; text-underline-offset: .3em; }
+button { color: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 5px; }
 
 button,
 input,
@@ -23,4 +55,12 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
 }

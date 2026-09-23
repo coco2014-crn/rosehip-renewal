@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>HAIR | ROSE HIP</title>
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
@@ -11,18 +11,76 @@
   <script type="module" src="assets/js/main.js"></script>
 </head>
 <body>
-  <header>
-    <nav aria-label="メインナビゲーション">
-      <a href="index.html">ROSE HIP</a>
-      <!-- ナビゲーションの内容とUIは後続PHASEで実装。 -->
-    </nav>
+  <a class="skip-link" href="#main-content">本文へスキップ</a>
+  <header class="site-header" data-site-header>
+    <div class="container header-inner">
+      <a class="site-brand" href="index.html" aria-label="ROSE HIP ホーム">
+        <!-- 正式ロゴ追加時は、このspanを画像に差し替える。 -->
+        <span class="site-brand__text">ROSE HIP</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="メニューを開く" data-menu-toggle hidden>
+        <span data-menu-label>MENU</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-navigation" id="site-navigation" aria-label="メインナビゲーション" data-site-navigation>
+        <ul class="navigation-list">
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="hair.html" aria-current="page">HAIR</a></li>
+          <li><a href="nail.html">NAIL</a></li>
+          <li><a href="eye.html">EYE</a></li>
+          <li><a href="staff.html">STAFF</a></li>
+          <li><a href="recruit.html">RECRUIT</a></li>
+          <li class="navigation-mobile-only"><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="navigation-reservation">
+          <button class="button button--primary" type="button" data-reservation-trigger aria-describedby="header-reservation-note" disabled>予約する</button>
+          <p class="reservation-note" id="header-reservation-note"></p>
+        </div>
+      </nav>
+    </div>
   </header>
-  <main id="main-content">
-    <h1>HAIR</h1>
-    <!-- 本文は後続PHASEで実装。セクションにはh2、内部の項目にはh3を使用。 -->
+  <main id="main-content" tabindex="-1">
+    <header class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">HAIR</h1>
+        <p class="page-hero__subtitle">ヘア</p>
+      </div>
+    </header>
+    <nav class="breadcrumbs container" aria-label="パンくず">
+      <ol>
+        <li><a href="index.html">HOME</a></li>
+        <li><span aria-current="page">ヘア</span></li>
+      </ol>
+    </nav>
+    <div class="container container--text section page-placeholder">
+      <!-- ページ本文は後続PHASEで実装。 -->
+    </div>
   </main>
-  <footer>
-    <!-- フッターの内容とUIは後続PHASEで実装。 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="site-brand" href="index.html" aria-label="ROSE HIP ホーム">
+        <span class="site-brand__text">ROSE HIP</span>
+      </a>
+      <nav aria-label="フッターナビゲーション">
+        <ul class="footer-links">
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="hair.html" aria-current="page">HAIR</a></li>
+          <li><a href="nail.html">NAIL</a></li>
+          <li><a href="eye.html">EYE</a></li>
+          <li><a href="staff.html">STAFF</a></li>
+          <li><a href="recruit.html">RECRUIT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="privacy.html">PRIVACY</a></li>
+        </ul>
+      </nav>
+      <!-- 確認済みの店舗情報・SNS・ACCESSは後続PHASEで追加。 -->
+      <small class="footer-credit">ROSE HIP</small>
+    </div>
   </footer>
+  <aside class="mobile-cta" aria-label="予約案内" data-mobile-cta="reservation">
+    <!-- RECRUITの採用問い合わせCTAへの切り替えは後続PHASEで実装。 -->
+    <button class="button button--primary" type="button" data-reservation-trigger aria-describedby="mobile-reservation-note" disabled>予約する</button>
+    <p class="reservation-note" id="mobile-reservation-note"></p>
+  </aside>
 </body>
 </html>
