@@ -39,7 +39,7 @@ PHASE 7-02の基本土台に、PHASE 7-03のHEADER・FOOTER・共通UIを実装�
 
 JavaScriptなしではナビリンクを通常表示します。JavaScript有効時は64rem未満で開閉MENU、64rem以上でPCナビを表示します。この境界を変更する場合はlayout.css / components.css / navigation.jsを揃えてください。
 
-予約CTAは`data-reservation-trigger`を接続口とし、今回は`disabled`と準備中の注記を設定しています。予約URL・送信処理はありません。スマホ固定CTAはsafe-areaとページ末尾の余白を考慮しています。RECRUITは`data-mobile-cta="recruit"`で識別し、採用CTAへの切り替えは後続PHASEで行います。
+予約CTAは「予約する」ボタンの見た目のみを用意し、`disabled`の状態です。`data-reservation-trigger`を将来の接続口とし、実際の予約URL・予約機能は未接続です。スマホ固定CTAはsafe-areaとページ末尾の余白を考慮しています。RECRUITは`data-mobile-cta="recruit"`で識別し、採用CTAへの切り替えは後続PHASEで行います。
 
 共通クラスは`.container` / `.container--text` / `.section` / `.section-heading`、ボタンは`.button.button--primary` / `.button.button--secondary`、テキストリンクは`.text-link`です。ページ移動にはa、UI操作にはbuttonを使用します。`.site-header--overlay`は将来の透明HEADER用で、現在は適用していません。適用時は背景とのコントラストを再確認してください。
 
