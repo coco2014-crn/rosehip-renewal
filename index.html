@@ -40,10 +40,82 @@
     </div>
   </header>
   <main id="main-content" tabindex="-1">
-    <div class="container section page-placeholder">
-      <h1 class="page-placeholder__title">ROSE HIP</h1>
-      <!-- TOP本文・HEROは後続PHASEで実装。 -->
-    </div>
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-hero__media" data-hero-media aria-hidden="true">
+        <!-- 正式素材追加時の接続先: assets/video/hero-pc.mp4 / hero-sp.mp4。
+             PC/SPの選択とposterを接続し、muted / playsinline / autoplay / loopを設定。
+             reduced-motion時は静止画へ切り替え、再生停止操作も同時に実装する。
+             今回はvideo / source / posterの実参照を作らない。 -->
+      </div>
+      <div class="container home-hero__inner">
+        <div class="home-hero__identity">
+          <h1 class="home-hero__title" id="home-title">ROSE HIP</h1>
+          <p class="home-hero__copy"><!-- 確定後、短いキャッチコピーをここに配置。 --></p>
+        </div>
+        <a class="home-hero__next" href="#home-about">ABOUT ROSE HIP <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="home-about section" id="home-about" aria-labelledby="home-about-title">
+      <div class="container home-about__layout">
+        <div class="home-about__content">
+          <h2 class="home-heading" id="home-about-title">ABOUT<br>ROSE HIP</h2>
+          <!-- 仮本文。正式な紹介文は後続PHASEで確認・差し替え。 -->
+          <p class="home-about__intro">ROSE HIPについてご紹介します。</p>
+          <a class="text-link home-detail-link" href="about.html">ABOUT ROSE HIP</a>
+        </div>
+        <div class="home-about__visual home-visual" aria-hidden="true">
+          <!-- 正式なサロン写真を配置する領域。内容を伝える写真の場合は
+               aria-hiddenを外し、画像に適切なaltを設定する。 -->
+        </div>
+      </div>
+    </section>
+
+    <section class="home-services section" aria-labelledby="home-services-title">
+      <div class="container">
+        <header class="home-services__heading">
+          <h2 class="home-heading" id="home-services-title">SERVICE</h2>
+          <p class="home-eyebrow">ヘア・ネイル・アイ</p>
+        </header>
+
+        <article class="home-service home-service--hair" aria-labelledby="home-hair-title">
+          <div class="home-service__visual home-visual" aria-hidden="true">
+            <!-- 正式なHAIR写真用。内容を伝える画像にはaria-hiddenを外しaltを設定。 -->
+          </div>
+          <div class="home-service__content">
+            <p class="home-service__number" aria-hidden="true">01</p>
+            <h3 class="home-service__title" id="home-hair-title">HAIR</h3>
+            <!-- 仮説明。未確認の施術内容や強みは記載しない。 -->
+            <p class="home-service__description">ROSE HIPのヘアサービス。</p>
+            <a class="text-link home-detail-link" href="hair.html">HAIRについて</a>
+          </div>
+        </article>
+
+        <article class="home-service home-service--nail" aria-labelledby="home-nail-title">
+          <div class="home-service__visual home-visual" aria-hidden="true">
+            <!-- 正式なNAIL写真用。内容を伝える画像にはaria-hiddenを外しaltを設定。 -->
+          </div>
+          <div class="home-service__content">
+            <p class="home-service__number" aria-hidden="true">02</p>
+            <h3 class="home-service__title" id="home-nail-title">NAIL</h3>
+            <p class="home-service__description">ROSE HIPのネイルサービス。</p>
+            <a class="text-link home-detail-link" href="nail.html">NAILについて</a>
+          </div>
+        </article>
+
+        <article class="home-service home-service--eye" aria-labelledby="home-eye-title">
+          <div class="home-service__visual home-visual" aria-hidden="true">
+            <!-- 正式なEYE写真用。内容を伝える画像にはaria-hiddenを外しaltを設定。 -->
+          </div>
+          <div class="home-service__content">
+            <p class="home-service__number" aria-hidden="true">03</p>
+            <h3 class="home-service__title" id="home-eye-title">EYE</h3>
+            <p class="home-service__description">ROSE HIPのアイサービス。</p>
+            <a class="text-link home-detail-link" href="eye.html">EYEについて</a>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="container footer-inner">
