@@ -1,0 +1,87 @@
+.beauty-page{background:var(--paper)}
+.beauty-header{color:var(--ink);background:rgba(250,249,246,.92);box-shadow:0 1px 0 var(--line)}
+.beauty-hero{min-height:720px;padding:170px clamp(24px,12vw,180px) 85px;display:flex;flex-direction:column;justify-content:space-between;border-bottom:1px solid var(--line)}
+.beauty-hero-copy{margin-left:clamp(0px,16vw,230px)}.beauty-label{font:500 clamp(54px,8vw,112px)/.95 'Cormorant Garamond',serif;letter-spacing:.055em;margin:0 0 34px}.beauty-hero h1{font:400 clamp(32px,4.5vw,64px)/1.12 'Cormorant Garamond',serif;letter-spacing:.02em;margin:0 0 30px}.beauty-jp{font:400 clamp(19px,2vw,27px)/1.8 'Noto Serif JP',serif}.beauty-scroll{position:static;color:var(--ink);margin-top:80px}
+.beauty-intro{display:grid;grid-template-columns:25% 1fr;gap:clamp(60px,16vw,240px);min-height:650px;align-items:center}.intro-copy h2,.service-heading h2,.beauty-staff h2,.total-copy h2,.beauty-reservation h2{font:400 clamp(29px,3.5vw,49px)/1.65 'Noto Serif JP',serif;margin:0 0 35px}.intro-copy .body-copy+.body-copy{margin-top:24px}
+.beauty-service{display:grid;grid-template-columns:30% 1fr;column-gap:clamp(60px,11vw,170px);row-gap:95px}.service-heading{padding-top:25px}.service-index{font:400 25px 'Cormorant Garamond',serif;letter-spacing:.08em;margin:0 0 32px}.service-heading .eyebrow{margin-bottom:24px}.visual-placeholder{min-height:450px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted)}.visual-placeholder span{font:400 clamp(40px,6vw,78px)/1 'Cormorant Garamond',serif;letter-spacing:.08em;color:var(--line)}.visual-placeholder small{position:absolute;margin-top:185px;font-size:12px}.nail-visual{transform:translateY(35px);margin-right:12%}.eye-service{padding-top:clamp(160px,20vw,300px)}.eye-service .service-heading{grid-column:2;grid-row:1;padding-left:9%}.eye-visual{grid-column:1;grid-row:1;min-height:390px;margin-top:170px;margin-left:10%;margin-right:10%}.eye-service .menu-block{grid-column:1 / -1}.menu-block{max-width:760px;margin-left:auto;width:100%}.menu-block>.eyebrow{margin-bottom:24px}.beauty-price-table{border-top:1px solid var(--line)}.beauty-price-table div{display:grid;grid-template-columns:180px 1fr;gap:30px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}.beauty-price-table span{font:500 26px 'Cormorant Garamond',serif;letter-spacing:.08em}.beauty-price-table em{font-style:normal;color:var(--muted);font-size:13px}.beauty-staff{display:grid;grid-template-columns:1fr 38%;gap:clamp(70px,15vw,220px);min-height:500px;align-items:center}.staff-note{border-top:1px solid var(--line);padding-top:28px}.total-beauty{min-height:760px;display:flex;flex-direction:column;justify-content:center}.total-copy{margin-left:34%;max-width:650px}.total-copy h2{font-size:clamp(32px,4vw,59px)}.total-lead{font:400 clamp(26px,3vw,43px)/1.65 'Noto Serif JP',serif;margin:0 0 42px}.total-services{font-size:12px;letter-spacing:.22em;color:var(--muted);margin-bottom:32px}.beauty-reservation{max-width:900px;padding-top:150px}.beauty-reservation h2{font-size:clamp(33px,4vw,58px);margin-bottom:25px}.reservation-copy{margin-left:22%;margin-bottom:65px}
+@media(max-width:700px){.beauty-hero{min-height:680px;padding:120px 24px 70px}.beauty-hero-copy{margin:0}.beauty-label{font-size:68px;line-height:.98}.beauty-hero h1{font-size:39px}.beauty-jp{font-size:18px}.beauty-scroll{margin-top:60px}.beauty-intro,.beauty-service,.beauty-staff{display:block;min-height:0}.beauty-intro .intro-copy{margin-top:65px}.beauty-service{padding-top:115px;padding-bottom:30px}.service-heading{padding-top:0}.service-index{margin-bottom:22px}.service-heading h2{font-size:30px;margin-bottom:55px}.visual-placeholder{min-height:250px}.visual-placeholder small{margin-top:130px;padding:0 20px}.nail-visual{transform:none;margin:0 0 70px}.eye-service{padding-top:170px}.eye-service .service-heading{padding:0}.eye-visual{margin:70px 0 75px;min-height:230px}.menu-block{margin:0}.beauty-price-table div{grid-template-columns:minmax(100px,35%) 1fr;gap:14px;padding:18px 0}.beauty-price-table span{font-size:23px}.beauty-price-table em{font-size:12px;line-height:1.6}.beauty-staff{padding-top:130px;padding-bottom:150px}.beauty-staff h2{font-size:29px}.staff-note{margin-top:60px}.total-beauty{min-height:610px;padding-top:120px;padding-bottom:120px}.total-copy{margin:42px 0 0}.total-copy h2{font-size:32px}.total-lead{font-size:28px}.beauty-reservation{padding-top:100px}.reservation-copy{margin:52px 0 45px}.beauty-reservation h2{font-size:34px}}
+.beauty-staff h2{white-space:nowrap}
+.visual-placeholder.photo-ready span,.visual-placeholder.photo-ready small{display:none}
+@media(min-width:701px){.beauty-staff{grid-template-columns:minmax(0,1.18fr) 34%;gap:clamp(70px,12vw,180px)}}
+@media(max-width:700px){.beauty-staff h2{white-space:normal}}
+@media(min-width:701px){
+  .beauty-service{grid-template-columns:38% 1fr;column-gap:clamp(50px,8vw,120px)}
+  .service-heading h2,.beauty-intro h2,.beauty-staff h2,.total-copy h2,.beauty-reservation h2{white-space:nowrap}
+}
+@media(max-width:700px){
+  .service-heading h2,.beauty-intro h2,.beauty-staff h2,.total-copy h2,.beauty-reservation h2{white-space:normal}
+}
+@media(min-width:701px){
+  .menu-block{max-width:1040px;width:calc(100% - 24px)}
+  .beauty-price-table div{grid-template-columns:240px minmax(0,1fr);gap:clamp(40px,6vw,100px)}
+  .beauty-price-table em{white-space:nowrap}
+}
+@media(max-width:700px){
+  .beauty-price-table em{white-space:normal}
+}
+.beauty-page .photo-placeholder__title{max-width:100%;font-size:clamp(18px,2vw,30px);line-height:1.12;overflow-wrap:anywhere}
+.beauty-page .photo-placeholder__note{max-width:100%;overflow-wrap:anywhere}
+@media(max-width:700px){.beauty-page .photo-placeholder__title{font-size:clamp(17px,5.2vw,22px)}.beauty-page .photo-placeholder__copy{max-width:100%;padding:16px 10px}}
+.beauty-page .eye-gallery .photo-placeholder__title{font-size:clamp(24px,3vw,42px);line-height:1.05;letter-spacing:.12em;white-space:nowrap}
+.beauty-page .eye-gallery .photo-placeholder__title br{display:block}
+.beauty-page .eye-gallery .photo-placeholder__note{display:block;max-width:100%;padding:0 8px 4px;font-size:10px;line-height:1.45;text-align:center;white-space:normal;overflow-wrap:normal;word-break:keep-all}
+@media(max-width:700px){.beauty-page .eye-gallery .photo-placeholder__title{font-size:clamp(22px,7vw,30px)}.beauty-page .eye-gallery .photo-placeholder__note{max-width:100%;padding:0 6px 6px;font-size:9px;line-height:1.5;white-space:normal}}
+
+.photo-strip{display:grid;grid-template-columns:1fr 1fr;gap:18px;grid-column:1/-1;margin-top:-45px}.photo-strip .visual-placeholder{min-height:260px}.price-category{border-top:1px solid var(--line);padding-top:28px;margin-top:54px}.price-category h3,.guarantee h3{font:500 14px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;margin:0 0 6px}.price-item{display:grid;grid-template-columns:minmax(0,1fr) minmax(120px,34%);gap:30px;align-items:end;padding:18px 0;border-bottom:1px solid var(--line)}.price-item b{font-weight:500;line-height:1.6;overflow-wrap:normal;word-break:keep-all}.price-item small{grid-column:1/-1;color:var(--muted);font-size:12px;line-height:1.8;margin-top:-8px;overflow-wrap:normal;word-break:keep-all}.price-item span{text-align:right;white-space:nowrap;font-size:13px;letter-spacing:.04em}.price-note,.category-note{color:var(--muted);font-size:12px;line-height:1.8}.guarantee{border-top:1px solid var(--line);margin-top:70px;padding-top:28px}.guarantee p{color:var(--muted);font-size:12px;line-height:2;margin:16px 0}.staff-profile{border-top:1px solid var(--line);padding:22px 0;display:grid;grid-template-columns:120px 1fr;gap:4px 18px}.staff-photo-placeholder{grid-row:span 3;min-height:120px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font:12px/1.5 'Cormorant Garamond',serif;letter-spacing:.08em}.staff-profile b{font-weight:500}.staff-profile span{color:var(--muted);font-size:12px}.staff-profile small{color:var(--muted);font-size:11px;line-height:1.7}.beauty-staff .text-link{margin-top:24px}
+@media(max-width:700px){.photo-strip{gap:12px;margin:0 0 70px}.photo-strip .visual-placeholder{min-height:180px}.price-category{margin-top:44px;padding-top:22px}.price-category h3{font-size:13px}.price-item{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;padding:16px 0}.price-item b{flex:1 1 100%;font-size:14px}.price-item small{order:3;flex:1 1 100%;margin:0;font-size:11px}.price-item span{margin-left:auto;font-size:13px}.guarantee{margin-top:55px}.staff-profile{grid-template-columns:96px 1fr;gap:4px 14px}.staff-photo-placeholder{min-height:96px;font-size:10px}}
+@media(min-width:701px){.nail-service .menu-block,.eye-service .menu-block{grid-column:1/-1}.nail-service .menu-block{max-width:1040px}.eye-service .menu-block{max-width:1040px}}
+
+/* Final mobile gallery and header corrections. Runtime galleries are generated
+   from the single .visual-placeholder in each service section by script.js. */
+.beauty-header,.beauty-header.scrolled{background-color:#faf9f6;opacity:1;backdrop-filter:none}
+@media(max-width:767px){
+  .beauty-page .nail-gallery,.beauty-page .eye-gallery{grid-template-columns:1fr!important;grid-template-rows:none!important;gap:18px;margin:0 0 70px!important;padding:0 4px}
+  .beauty-page .nail-gallery .photo-placeholder,.beauty-page .eye-gallery .photo-placeholder{width:100%;min-height:220px;aspect-ratio:4/3!important}
+  .beauty-page .nail-gallery .photo-placeholder__title,.beauty-page .eye-gallery .photo-placeholder__title{white-space:nowrap;overflow-wrap:normal;word-break:keep-all}
+  .beauty-page .price-item b{flex:1 1 auto;min-width:0}
+  .beauty-page .price-item span{flex:0 0 auto}
+  .beauty-page .price-item small{flex:1 1 100%}
+  .beauty-page .price-item b,.beauty-page .price-item small{overflow-wrap:anywhere;word-break:normal}
+  .beauty-page .price-note{margin:8px 0 0}
+}
+
+/* Final SP vertical rhythm: keep the editorial pause without the large
+   apparent gap between INTRO, service heading, and the first photo. */
+@media(max-width:767px){
+  .beauty-page .beauty-intro{padding-bottom:42px}
+  .beauty-page .nail-service{padding-top:72px}
+  .beauty-page .eye-service{padding-top:112px}
+  .beauty-page .service-heading h2{margin-bottom:36px}
+  .beauty-page .beauty-staff{padding-bottom:96px}
+  .beauty-page .total-beauty{min-height:0;padding-top:88px;padding-bottom:88px}
+  .beauty-page .beauty-reservation{padding-top:88px}
+  .beauty-page .eye-service{padding-bottom:20px}
+  .beauty-page .beauty-staff{padding-top:85px;padding-bottom:70px}
+  .beauty-page .total-beauty{padding-top:70px}
+}
+
+/* Desktop editorial rhythm and full-width service galleries. */
+@media(min-width:768px){
+  .beauty-page .beauty-intro{min-height:500px;padding-bottom:120px}
+  .beauty-page .nail-service{padding-top:105px;padding-bottom:125px}
+  .beauty-page .eye-service{padding-top:145px;padding-bottom:70px}
+  .beauty-page .nail-service .nail-gallery,
+  .beauty-page .eye-service .eye-gallery{grid-column:1/-1;width:calc(100% - 72px);margin:0 auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .beauty-page .nail-service .nail-gallery .photo-placeholder,
+  .beauty-page .eye-service .eye-gallery .photo-placeholder{aspect-ratio:4/5;min-height:420px}
+  .beauty-page .nail-service .menu-block,
+  .beauty-page .eye-service .menu-block{grid-column:1/-1}
+  .beauty-page .price-item{grid-template-columns:minmax(0,1fr) 220px;grid-template-areas:"name price" "desc price";align-items:end}
+  .beauty-page .price-item b{grid-area:name}
+  .beauty-page .price-item small{grid-area:desc;grid-column:auto;margin-top:0}
+  .beauty-page .price-item span{grid-area:price;align-self:end;justify-self:end;width:100%;text-align:right;white-space:nowrap}
+  .beauty-page .beauty-staff{min-height:400px;padding-top:85px;padding-bottom:120px}
+  .beauty-page .total-beauty{min-height:640px;padding-top:130px;padding-bottom:110px}
+  .beauty-page .beauty-reservation{padding-top:120px;padding-bottom:140px}
+}
+.staff-photo-placeholder{object-fit:cover;object-position:center;width:100%;height:auto}

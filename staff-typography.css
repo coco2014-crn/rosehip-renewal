@@ -1,0 +1,5 @@
+/* Japanese display copy stays together by meaning at every viewport. */
+.staff-hero h1,.staff-jp,.staff-intro h2,.members-heading h2,.why-copy h2,.work-heading h2,.message-copy h2,.staff-recruit h2,.reservation h2{word-break:keep-all;overflow-wrap:normal}
+@media(min-width:701px){.staff-intro h2,.members-heading h2,.why-copy h2,.work-heading h2,.message-copy h2,.staff-recruit h2,.reservation h2{max-width:12em}}
+.members-heading .body-copy{font-size:0}
+.members-heading .body-copy::after{content:'それぞれの技術と個性を活かしながら、 ROSE HIPの美容をつくっています。';white-space:normal;font-size:14px;line-height:2.2;color:var(--muted)}
