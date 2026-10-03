@@ -12,6 +12,10 @@
 @media(max-width:700px){.salon-page .our-layout figure{margin-left:8%;margin-right:auto}.salon-page .our-layout .body-copy{max-width:none;letter-spacing:-.025em}}
 @media(min-width:701px){.salon-page .access{min-height:0;padding-bottom:140px}.salon-page .first-visit{min-height:0;padding-top:150px;padding-bottom:170px}}
 .salon-photo-gallery{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(150px,.72fr);gap:clamp(28px,5vw,72px);align-items:end;margin-top:clamp(20px,4vw,54px)}
+
+@media (min-width:701px) and (max-width:850px){
+  .salon-photo-gallery{grid-template-columns:minmax(0,1.35fr) minmax(0,.72fr);gap:28px}
+}
 .salon-photo-placeholder{min-height:220px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:var(--muted);font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:.08em;line-height:1.9;background:linear-gradient(135deg,rgba(242,240,235,.75),rgba(250,249,246,.35))}
 .salon-photo-placeholder .placeholder-label{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.14em;line-height:1.2;color:var(--ink);margin-bottom:16px}.salon-photo-placeholder .placeholder-label strong{font-size:30px;font-weight:400}.salon-photo-exterior{aspect-ratio:4/3}.salon-photo-detail{aspect-ratio:3/4;max-width:250px;justify-self:end}
 .salon-photo-placeholder:has(img){margin:0;overflow:hidden}.salon-photo-placeholder img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}.salon-photo-exterior img{object-position:center}
