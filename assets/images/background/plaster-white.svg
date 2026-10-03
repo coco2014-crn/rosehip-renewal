@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="960" viewBox="0 0 960 960">
+  <filter id="plaster" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.028" numOctaves="3" seed="17" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0.22 0 0 0 0.78 0 0.22 0 0 0.77 0 0 0.22 0 0.73 0 0 0 0.18 0" result="softgrain"/>
+    <feDisplacementMap in="SourceGraphic" in2="grain" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    <feBlend in="SourceGraphic" in2="softgrain" mode="multiply"/>
+  </filter>
+  <rect width="960" height="960" fill="#faf9f6"/>
+  <path d="M-60 160 C180 90 330 240 520 160 S820 80 1020 170 M-80 520 C150 430 320 610 530 505 S820 430 1040 540 M-80 850 C180 760 330 930 540 825 S820 760 1040 860" fill="none" stroke="#e8e4dc" stroke-width="42" stroke-linecap="round" opacity=".22" filter="url(#plaster)"/>
+  <rect width="960" height="960" fill="none" filter="url(#plaster)" opacity=".28"/>
+</svg>
