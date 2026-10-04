@@ -84,7 +84,7 @@ body{background-color:var(--paper);background-image:url('./assets/images/backgro
   .service-row{grid-template-columns:clamp(92px,24%,110px) minmax(0,1fr);row-gap:3px;align-items:baseline}
   .service-copy{min-width:0}
   .service-action{grid-column:2;grid-row:2;text-align:left;white-space:normal;font-size:12px;letter-spacing:.04em;margin-top:2px}
-  .recruit-float{right:32px;bottom:24px;width:104px;height:104px}
+  .recruit-float{right:44px;bottom:24px;width:104px;height:104px}
   .recruit-ring{inset:6px;width:92px;height:92px}
   .recruit-float .recruit-word{font-size:16px}
   .recruit-float .recruit-arrow{font-size:15px;margin-top:5px}
@@ -94,8 +94,28 @@ body{background-color:var(--paper);background-image:url('./assets/images/backgro
   .service-row{grid-template-columns:clamp(106px,22%,125px) minmax(0,1fr) max-content;column-gap:14px}
   .service-copy,.service-action{min-width:0}
   .service-action{font-size:12px;letter-spacing:.04em}
-  .recruit-float{right:32px;bottom:24px;width:104px;height:104px}
+  .recruit-float{right:44px;bottom:24px;width:104px;height:104px}
   .recruit-ring{inset:6px;width:92px;height:92px}
   .recruit-float .recruit-word{font-size:16px}
   .recruit-float .recruit-arrow{font-size:15px;margin-top:5px}
+}
+
+/* Reuse the established mobile header at tablet width. */
+@media (min-width:701px) and (max-width:850px){
+  .site-header{padding:14px 16px;gap:16px}
+  .site-header .desktop-nav{display:none}
+  .site-header .mobile-reserve{display:inline-flex;margin-left:auto;font-size:10px;letter-spacing:.14em;border-bottom:1px solid currentColor;padding-bottom:3px}
+  .site-header .menu-button{display:inline-flex;background:none;border:0;color:inherit;font:inherit;font-size:10px;letter-spacing:.14em;padding:0}
+  .mobile-menu{position:fixed;z-index:9;inset:0;background:var(--paper);padding:110px 24px 30px;display:flex;flex-direction:column;gap:18px;font-family:'Cormorant Garamond',serif;font-size:25px;letter-spacing:.1em;opacity:0;pointer-events:none;transition:.3s}
+  .mobile-menu.open{opacity:1;pointer-events:auto}
+  .mobile-menu-group{display:flex;flex-direction:column;gap:12px;padding:4px 0 8px}
+  .mobile-menu-group a{font-family:'Noto Sans JP',sans-serif;font-size:16px;letter-spacing:.04em;padding-left:18px}
+  .mobile-menu-group>span{font-family:'Noto Sans JP',sans-serif;font-size:13px;letter-spacing:.12em;color:var(--muted)}
+  .nav-dropdown-menu{position:static;transform:none;display:none;box-shadow:none;border:0;padding:0;background:transparent}
+}
+@media (min-width:851px) and (max-width:1100px){
+  .site-header{padding-left:24px;padding-right:24px}
+  .site-header .desktop-nav{gap:16px;font-size:12px;letter-spacing:.07em}
+  .site-header .reserve-link{padding-left:14px!important;padding-right:14px!important}
+  .site-header .brand{font-size:29px}
 }
