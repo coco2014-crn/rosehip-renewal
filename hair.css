@@ -31,7 +31,3 @@
 .price-list em{color:var(--muted);font-size:11px;font-style:normal;white-space:nowrap}
 @media(max-width:700px){.price-list>div{grid-template-columns:minmax(0,1fr) auto auto;gap:10px}.price-list em{font-size:10px}.price-category:first-child .price-list>div:nth-child(n+5){display:grid}.price-category:first-child .price-list>div:nth-child(n+5) strong{display:block;margin-top:0;text-align:right;font-size:14px}}
 .stylist-placeholder{display:block;width:100%;height:auto;object-fit:cover;object-position:center}
-
-/* HAIR ESTHETIC has no separate price node; keep its two-column rows aligned. */
-.price-list>div:not(:has(strong)){grid-template-columns:minmax(0,1fr) auto}
-@media(max-width:700px){.price-list>div:not(:has(strong)){grid-template-columns:minmax(0,1fr) auto}}
