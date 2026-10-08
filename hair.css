@@ -35,9 +35,11 @@
 /* Keep PERM subgroups aligned with the COLOR menu hierarchy. */
 .price-category--perm .color-groups{display:grid;gap:28px}
 .price-category--perm .color-group h4{font:500 17px/1.5 'Noto Serif JP',serif;letter-spacing:.04em;margin:0 0 10px}
-.price-category--perm .perm-treatment{display:inline-block;margin-left:.45em;color:var(--muted);white-space:nowrap}
+.price-category--perm .color-group:first-child{padding-bottom:12px}
+.price-category--perm .perm-treatment{display:inline-block;margin-left:.75em;color:var(--muted);white-space:nowrap}
 .price-category--treatment .treatment-group{margin-top:28px}
 .price-category--treatment .treatment-group h4{font:500 17px/1.5 'Noto Serif JP',serif;letter-spacing:.04em;margin:0 0 10px}
-.price-discount-label,.price-note--discount{color:var(--recruit)}
+.hair-page .price-category .price-list strong .price-discount-label{color:var(--recruit,#c97868)}
+.hair-page .price-category .price-note--discount{color:var(--recruit,#c97868)}
 @media(max-width:700px){.price-category--perm .color-groups{gap:24px}.price-category--perm .color-group h4{font-size:16px;margin-bottom:8px}}
-@media(max-width:700px){.price-category--treatment .treatment-group{margin-top:24px}.price-category--treatment .treatment-group h4{font-size:16px;margin-bottom:8px}}
+@media(max-width:700px){.price-category--perm .color-group:first-child{padding-bottom:10px}.price-category--treatment .treatment-group{margin-top:24px}.price-category--treatment .treatment-group h4{font-size:16px;margin-bottom:8px}}
