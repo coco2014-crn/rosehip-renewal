@@ -7,6 +7,7 @@
   .about-image{aspect-ratio:5/4;align-self:center}
   .services{grid-template-columns:22% 1fr;gap:clamp(80px,14vw,210px);padding-top:clamp(120px,13vw,180px);padding-bottom:clamp(150px,17vw,230px)}
   .services .service-list{max-width:560px}
+  .services .service-row{grid-template-columns:140px minmax(0,1fr) max-content;column-gap:18px}
   .every-age{min-height:760px;padding-left:clamp(70px,12vw,170px);padding-right:clamp(70px,12vw,170px)}
   .age-copy{margin-left:24%;max-width:600px}
   .staff{grid-template-columns:34% minmax(0,1fr);gap:clamp(100px,16vw,240px);padding-left:clamp(48px,8vw,120px);padding-right:clamp(70px,10vw,150px)}
