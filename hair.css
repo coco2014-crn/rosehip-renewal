@@ -31,3 +31,13 @@
 .price-list em{color:var(--muted);font-size:11px;font-style:normal;white-space:nowrap}
 @media(max-width:700px){.price-list>div{grid-template-columns:minmax(0,1fr) auto auto;gap:10px}.price-list em{font-size:10px}.price-category:first-child .price-list>div:nth-child(n+5){display:grid}.price-category:first-child .price-list>div:nth-child(n+5) strong{display:block;margin-top:0;text-align:right;font-size:14px}}
 .stylist-placeholder{display:block;width:100%;height:auto;object-fit:cover;object-position:center}
+
+/* Keep PERM subgroups aligned with the COLOR menu hierarchy. */
+.price-category--perm .color-groups{display:grid;gap:28px}
+.price-category--perm .color-group h4{font:500 17px/1.5 'Noto Serif JP',serif;letter-spacing:.04em;margin:0 0 10px}
+.price-category--perm .perm-treatment{display:inline-block;margin-left:.45em;color:var(--muted);white-space:nowrap}
+.price-category--treatment .treatment-group{margin-top:28px}
+.price-category--treatment .treatment-group h4{font:500 17px/1.5 'Noto Serif JP',serif;letter-spacing:.04em;margin:0 0 10px}
+.price-discount-label,.price-note--discount{color:var(--recruit)}
+@media(max-width:700px){.price-category--perm .color-groups{gap:24px}.price-category--perm .color-group h4{font-size:16px;margin-bottom:8px}}
+@media(max-width:700px){.price-category--treatment .treatment-group{margin-top:24px}.price-category--treatment .treatment-group h4{font-size:16px;margin-bottom:8px}}
