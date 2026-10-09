@@ -69,7 +69,7 @@
 @media(min-width:768px){
   .beauty-page .beauty-intro{min-height:500px;padding-bottom:120px}
   .beauty-page .nail-service{padding-top:105px;padding-bottom:125px}
-  .beauty-page .eye-service{padding-top:145px;padding-bottom:70px}
+  .beauty-page .eye-service{padding-top:clamp(96px,9vw,120px);padding-bottom:70px}
   .beauty-page .nail-service .nail-gallery,
   .beauty-page .eye-service .eye-gallery{grid-column:1/-1;width:calc(100% - 72px);margin:0 auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
   .beauty-page .nail-service .nail-gallery .photo-placeholder,
