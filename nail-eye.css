@@ -98,3 +98,39 @@
   .beauty-reservation{padding-top:100px;padding-bottom:100px}
   .beauty-reservation h2{font-size:34px}
 }
+
+/* NAIL / EYE menu rows: match the HAIR table rhythm without changing other sections. */
+.beauty-page .nail-service .price-category,
+.beauty-page .eye-service .price-category{margin-top:42px;padding-top:22px}
+.beauty-page .nail-service .price-category:first-of-type,
+.beauty-page .eye-service .price-category:first-of-type{margin-top:0}
+.beauty-page .nail-service .price-item,
+.beauty-page .eye-service .price-item{grid-template-columns:minmax(0,1fr) 220px;grid-template-areas:"name price" "desc price";gap:4px 28px;align-items:baseline;padding:13px 0}
+.beauty-page .nail-service .price-item b,
+.beauty-page .eye-service .price-item b{grid-area:name;min-width:0;line-height:1.65;overflow-wrap:anywhere;word-break:normal}
+.beauty-page .nail-service .price-item small,
+.beauty-page .eye-service .price-item small{grid-area:desc;min-width:0;margin:0;color:var(--muted);font-size:11px;line-height:1.7;overflow-wrap:anywhere;word-break:normal}
+.beauty-page .nail-service .price-item>span,
+.beauty-page .eye-service .price-item>span{grid-area:price;display:flex;justify-content:flex-end;align-items:baseline;gap:8px;width:100%;white-space:nowrap;text-align:right;font-size:14px}
+.beauty-page .nail-service .price-duration,
+.beauty-page .eye-service .price-duration{color:var(--muted);font-size:11px;font-style:normal;letter-spacing:0}
+.beauty-page .nail-service .price-value,
+.beauty-page .eye-service .price-value{font-size:14px;font-weight:500;letter-spacing:.04em}
+.beauty-page .nail-service .guarantee,
+.beauty-page .eye-service .guarantee{margin-top:56px}
+@media(max-width:767px){
+  .beauty-page .nail-service .price-category,
+  .beauty-page .eye-service .price-category{margin-top:34px;padding-top:18px}
+  .beauty-page .nail-service .price-item,
+  .beauty-page .eye-service .price-item{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name price" "desc desc";gap:3px 12px;padding:13px 0;align-items:baseline}
+  .beauty-page .nail-service .price-item b,
+  .beauty-page .eye-service .price-item b{font-size:14px;line-height:1.65}
+  .beauty-page .nail-service .price-item small,
+  .beauty-page .eye-service .price-item small{font-size:11px;line-height:1.65}
+  .beauty-page .nail-service .price-item>span,
+  .beauty-page .eye-service .price-item>span{gap:5px;width:auto;max-width:42vw;font-size:13px}
+  .beauty-page .nail-service .price-duration,
+  .beauty-page .eye-service .price-duration{font-size:10px}
+  .beauty-page .nail-service .price-value,
+  .beauty-page .eye-service .price-value{font-size:13px}
+}
