@@ -13,6 +13,9 @@
 .reserve-method-copy strong{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:500;letter-spacing:.06em;line-height:1.2;overflow-wrap:anywhere}
 .reserve-method-copy>span{font-size:14px;color:var(--muted);line-height:2}
 .reserve-method-copy em{font-style:normal;font-size:12px;letter-spacing:.12em;color:inherit;align-self:flex-start;border-bottom:1px solid currentColor;padding-bottom:5px}
+.reserve-method-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:2px}
+.reserve-method-links a{font-size:13px;line-height:1.7;border-bottom:1px solid currentColor;padding-bottom:5px;min-height:44px}
+.reserve-method-links i{font-style:normal;font-size:18px;margin-left:12px}
 .reserve-method-copy i{font-style:normal;font-size:18px;margin-left:14px}
 .reserve-salon{display:grid;grid-template-columns:25% minmax(0,1fr);gap:clamp(50px,10vw,150px);background:var(--soft);max-width:none;padding-left:clamp(24px,12vw,180px);padding-right:clamp(24px,12vw,180px)}
 .reserve-salon h2{font-size:clamp(30px,4vw,52px);margin:0}
