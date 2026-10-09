@@ -82,7 +82,7 @@
   .beauty-page .price-item span{grid-area:price;align-self:end;justify-self:end;width:100%;text-align:right;white-space:nowrap}
   .beauty-page .beauty-staff{min-height:400px;padding-top:85px;padding-bottom:120px}
   .beauty-page .total-beauty{min-height:640px;padding-top:130px;padding-bottom:110px}
-  .beauty-page .beauty-reservation{padding-top:120px;padding-bottom:140px}
+  .beauty-page .beauty-reservation{padding-top:clamp(130px,16vw,220px);padding-bottom:clamp(130px,16vw,220px)}
 }
 
 @media (min-width:768px) and (max-width:850px){
@@ -91,3 +91,10 @@
 }
 .staff-photo-placeholder{object-fit:cover;object-position:center;width:100%;height:auto}
 .guarantee h4{font-size:13px;line-height:1.6;font-weight:500;margin:20px 0 0}
+
+/* Keep the reservation section aligned with HAIR. */
+.beauty-reservation h2{font:400 clamp(34px,4vw,58px)/1.7 'Noto Serif JP',serif;margin:0 0 36px}
+@media(max-width:700px){
+  .beauty-reservation{padding-top:100px;padding-bottom:100px}
+  .beauty-reservation h2{font-size:34px}
+}
