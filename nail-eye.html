@@ -46,6 +46,13 @@
     </main>
     <footer class="footer"><div class="footer-brand">ROSE HIP</div><div class="footer-links"><a href="./hair.html">HAIR</a><a href="./nail-eye.html">NAIL &amp; EYE</a><a href="./staff.html">STAFF</a><a href="./salon.html">SALON</a><a href="./recruit.html">RECRUIT</a><a href="#reservation">RESERVE</a></div><div class="footer-meta"><span>福岡県福岡市西区福重5丁目4-10</span><span>© ROSE HIP</span></div></footer>
     <script src="./script.js?v=42c86e5"></script><script src="./nav-ja.js?v=6391575"></script><script>
+      document.querySelectorAll('.nail-service .price-item span, .eye-service .price-item span').forEach((price)=>{
+        const match=price.textContent.match(/^(\d+分(?:〜\d+分)?\s+)(.+)$/);
+        if(!match)return;
+        const duration=document.createElement('em'); duration.className='price-duration'; duration.textContent=match[1];
+        const value=document.createElement('strong'); value.className='price-value'; value.textContent=match[2];
+        price.replaceChildren(duration,value);
+      });
       document.querySelectorAll('.eye-gallery .photo-placeholder__title').forEach((title,index)=>{title.textContent=`EYE PHOTO ${String(index+1).padStart(2,'0')}`;});
       document.querySelector('#nail')?.classList.add('visible');
     </script>
