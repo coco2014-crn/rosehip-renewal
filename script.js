@@ -16,5 +16,21 @@ if(footer){const serviceNav=footer.querySelectorAll('.footer-group')[1];if(servi
 document.querySelectorAll('.site-header .reserve-link,.site-header .mobile-reserve,.mobile-menu a[href="#reservation"]').forEach(link=>{if(!document.body.classList.contains('reserve-page'))link.href='./reserve.html'});
 document.querySelectorAll('.recruit-actions a[href="#reservation"],section[id="reservation"] a[href*="#reservation"]').forEach(link=>{if(!document.body.classList.contains('recruit-page'))link.href='./reserve.html'});
 document.querySelectorAll('.footer a').forEach(link=>{if(link.textContent.includes('ROSE HIP WEB予約'))link.href='https://rosehip.plus2.vc/sprsv/contents_select.php';});
+const heroVideos=[...document.querySelectorAll('.hero-video')];
+if(heroVideos.length){
+  const retryTimers=new WeakMap();
+  const isMobile=()=>window.matchMedia('(max-width:700px)').matches;
+  const isActive=video=>video.classList.contains('hero-video-sp')===isMobile();
+  const playSafely=video=>{
+    if(!isActive(video)||document.visibilityState==='hidden')return;
+    const attempt=()=>{if(!isActive(video)||!video.paused)return;const result=video.play();if(result?.catch)result.catch(()=>{clearTimeout(retryTimers.get(video));retryTimers.set(video,setTimeout(()=>{if(video.readyState===0)video.load();attempt()},1200))})};
+    attempt();
+  };
+  const syncHeroVideos=()=>heroVideos.forEach(video=>{if(isActive(video)){playSafely(video)}else{clearTimeout(retryTimers.get(video));video.pause()}});
+  heroVideos.forEach(video=>{['loadeddata','canplay','stalled','suspend','error','pause'].forEach(event=>video.addEventListener(event,()=>{if(event!=='pause'||isActive(video))playSafely(video)}));});
+  document.addEventListener('visibilitychange',syncHeroVideos);
+  window.matchMedia('(max-width:700px)').addEventListener('change',syncHeroVideos);
+  syncHeroVideos();
+}
 document.querySelectorAll('.footer-social a').forEach(link=>{const label=link.textContent.trim();const icons={Instagram:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',Facebook:'<path d="M14 21v-8h3l.5-3H14V8.2c0-1 .3-1.7 1.8-1.7H18V3.8c-.5-.1-1.4-.2-2.5-.2C13 3.6 11 5.1 11 8v2H8v3h3v8h3z"/>',X:'<path d="M4 4h4.2l4 5.3L16.8 4H20l-6.3 7.3L20 20h-4.2l-4.3-5.7L6.7 20H4l6.1-7.1L4 4zm3 2 8.9 12h1.1L8.1 6H7z"/>',LINE:'<path d="M20.5 11.2c0 4.1-3.8 7.4-8.5 7.4-1 0-2-.2-2.9-.5L5 20l.9-3.2c-1.5-1.3-2.4-3-2.4-4.9C3.5 8 7.3 4.7 12 4.7s8.5 2.4 8.5 6.5z"/><path class="footer-social-line" d="M8 11v2m3-2v2m3-2v2m3-2v2"/>'};link.setAttribute('aria-label',`${label}（ROSE HIP公式）`);link.innerHTML=`<svg viewBox="0 0 24 24" aria-hidden="true">${icons[label]}</svg>`});
 document.querySelectorAll('[data-contact-form]').forEach(form=>{const endpoint=form.dataset.endpoint?.trim();const status=form.querySelector('.form-status');const button=form.querySelector('button[type="submit"]');if(!endpoint){form.addEventListener('submit',event=>{event.preventDefault();if(status)status.textContent='送信機能は本番環境接続後に有効になります。';});return}form.addEventListener('submit',async event=>{event.preventDefault();if(!form.reportValidity())return;button.disabled=true;if(status)status.textContent='送信中…';try{const response=await fetch(endpoint,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});const result=await response.json().catch(()=>({}));if(!response.ok||result.success!==true)throw new Error('request failed');form.reset();if(status)status.textContent='送信が完了しました';}catch(error){if(status)status.textContent='送信できませんでした。時間をおいて再度お試しください。';}finally{button.disabled=false}})});
