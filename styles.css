@@ -20,7 +20,7 @@
 }
 
 /* Visual arrows flow continuously without moving their surrounding labels. */
-.arrow,.scroll-cue span,.text-link span,.light-link span,.reservation-list a>span:last-child,.job-list i,.entry-list a>span:last-child,.reserve-method-copy em i,.contact-form button span,.error-footer a>span,.footer-recruit>a:last-child,.footer-bottom>a,.recruit-arrow{display:inline-block;will-change:transform}
+.arrow,.scroll-cue span,.text-link span,.light-link span,.reservation-list a>span:last-child,.job-list i,.entry-list a>span:last-child,.reserve-method-copy em i,.contact-form button span,.error-footer a>span,.footer-recruit>a:last-child .arrow,.footer-bottom>a .arrow,.recruit-arrow{display:inline-block;will-change:transform}
 .arrow--right,.text-link span,.light-link span,.reservation-list a>span:last-child,.job-list i,.entry-list a>span:last-child,.reserve-method-copy em i,.contact-form button span,.error-footer a>span,.footer-recruit>a:last-child .arrow,.footer-bottom>a .arrow,.recruit-arrow{animation:arrow-flow-right 2.5s ease-in-out infinite}
 .scroll-cue span{animation:arrow-flow-down 2.5s ease-in-out infinite}
 .arrow--up{animation:arrow-flow-up 2.5s ease-in-out infinite}
