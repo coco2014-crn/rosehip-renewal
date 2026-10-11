@@ -427,6 +427,7 @@
   const tabList = document.querySelector('.job-tabs');
   const tabs = [...document.querySelectorAll('[data-job-tab]')];
   const panels = [...document.querySelectorAll('.job-panel:not(.management-panel)')];
+  const allPanels = [...document.querySelectorAll('.job-panel')];
   const management = document.querySelector('.management-panel');
   const commonNote = document.querySelector('.job-common-note');
   if (!tabList || !tabs.length || !panels.length) return;
@@ -469,7 +470,7 @@
     '美容師／店長 正社員': ['雇用期間|定めなし', '有給休暇|法定通り', '歩合|一部歩合あり', '各種手当|通勤手当あり／勤続手当あり'],
     '美容師／マネージャー 正社員': ['雇用期間|定めなし', '有給休暇|法定通り', '歩合|一部歩合あり', '各種手当|通勤手当あり／勤続手当あり']
   };
-  panels.forEach(panel => panel.querySelectorAll('.job-card').forEach(card => {
+  allPanels.forEach(panel => panel.querySelectorAll('.job-card').forEach(card => {
     const key = card.querySelector('h4')?.textContent.replace(/\s+/g, ' ').trim();
     (supplements[key] || []).forEach(item => {
       const [term, description] = item.split('|');
