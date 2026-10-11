@@ -18,16 +18,21 @@ document.querySelectorAll('.recruit-actions a[href="#reservation"],section[id="r
 document.querySelectorAll('.footer a').forEach(link=>{if(link.textContent.includes('ROSE HIP WEB予約'))link.href='https://rosehip.plus2.vc/sprsv/contents_select.php';});
 const heroVideos=[...document.querySelectorAll('.hero-video')];
 if(heroVideos.length){
-  const retryTimers=new WeakMap();
+  const maxPlayAttempts=3;
+  const playbackState=new WeakMap();
   const isMobile=()=>window.matchMedia('(max-width:700px)').matches;
   const isActive=video=>video.classList.contains('hero-video-sp')===isMobile();
+  const stateFor=video=>{let state=playbackState.get(video);if(!state){state={attempts:0,timer:0,pending:false};playbackState.set(video,state)}return state};
+  const clearRetry=video=>{const state=stateFor(video);clearTimeout(state.timer);state.timer=0;state.pending=false};
   const playSafely=video=>{
     if(!isActive(video)||document.visibilityState==='hidden')return;
-    const attempt=()=>{if(!isActive(video)||!video.paused)return;const result=video.play();if(result?.catch)result.catch(()=>{clearTimeout(retryTimers.get(video));retryTimers.set(video,setTimeout(()=>{if(video.readyState===0)video.load();attempt()},1200))})};
-    attempt();
+    const state=stateFor(video);if(state.pending||!video.paused||state.attempts>=maxPlayAttempts)return;
+    state.pending=true;state.attempts+=1;
+    const result=video.play();
+    if(result?.then)result.then(()=>{state.pending=false}).catch(()=>{state.pending=false;if(state.attempts<maxPlayAttempts){state.timer=setTimeout(()=>{state.timer=0;playSafely(video)},1200)}});
   };
-  const syncHeroVideos=()=>heroVideos.forEach(video=>{if(isActive(video)){playSafely(video)}else{clearTimeout(retryTimers.get(video));video.pause()}});
-  heroVideos.forEach(video=>{['loadeddata','canplay','stalled','suspend','error','pause'].forEach(event=>video.addEventListener(event,()=>{if(event!=='pause'||isActive(video))playSafely(video)}));});
+  const syncHeroVideos=()=>heroVideos.forEach(video=>{if(isActive(video)){stateFor(video).attempts=0;playSafely(video)}else{clearRetry(video);stateFor(video).attempts=0;video.pause()}});
+  heroVideos.forEach(video=>{video.addEventListener('playing',()=>{const state=stateFor(video);state.attempts=0;state.pending=false;clearRetry(video)});['loadeddata','canplay','stalled','suspend','error','pause'].forEach(event=>video.addEventListener(event,()=>{if(event!=='pause'||isActive(video))playSafely(video)}));});
   document.addEventListener('visibilitychange',syncHeroVideos);
   window.matchMedia('(max-width:700px)').addEventListener('change',syncHeroVideos);
   syncHeroVideos();
