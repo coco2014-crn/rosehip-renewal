@@ -426,7 +426,9 @@
 (() => {
   const tabList = document.querySelector('.job-tabs');
   const tabs = [...document.querySelectorAll('[data-job-tab]')];
-  const panels = [...document.querySelectorAll('.job-panel')];
+  const panels = [...document.querySelectorAll('.job-panel:not(.management-panel)')];
+  const management = document.querySelector('.management-panel');
+  const commonNote = document.querySelector('.job-common-note');
   if (!tabList || !tabs.length || !panels.length) return;
   document.documentElement.classList.add('recruit-js');
   const activate = (id, moveFocus = false) => {
@@ -441,6 +443,11 @@
       panel.hidden = !selected;
       panel.setAttribute('aria-hidden', String(!selected));
     });
+    if (commonNote) commonNote.hidden = id === 'hair-jobs';
+    if (management) {
+      management.hidden = false;
+      management.removeAttribute('aria-hidden');
+    }
   };
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => activate(tab.dataset.jobTab));
