@@ -97,7 +97,7 @@
 </ol>
 </div>
 </section>
-    <section class="recruit-section work-section reveal" id="jobs">
+    <section class="recruit-section work-section" id="jobs">
 <div class="section-number">
 <p class="eyebrow">04 / JOB INFORMATION</p>
 </div>
@@ -196,7 +196,10 @@
 </dl>
 </article>
 </section>
-<section class="job-panel" id="management-jobs" aria-labelledby="management-jobs-title">
+<div class="management-heading">
+<p class="eyebrow">SEPARATE RECRUITMENT</p>
+</div>
+<section class="job-panel management-panel" id="management-jobs" aria-labelledby="management-jobs-title">
 <h3 id="management-jobs-title">MANAGEMENT</h3>
 <article class="job-card">
 <h4>美容師／店長 <span>正社員</span>
@@ -266,7 +269,7 @@
 </div>
 </div>
 </section>
-    <section class="recruit-section career-section reveal" id="career">
+    <section class="recruit-section career-section" id="career">
 <div class="section-number">
 <p class="eyebrow">07 / 18-MONTH CAREER</p>
 </div>
@@ -434,16 +437,6 @@
       card.querySelector('dl')?.append(dt, dd);
     });
   }));
-  const management = document.querySelector('#management-jobs');
-  if (management) {
-    const heading = document.createElement('div');
-    heading.className = 'management-heading';
-    heading.innerHTML = '<p class="eyebrow">SEPARATE RECRUITMENT</p><h3>MANAGEMENT</h3>';
-    management.parentNode.insertBefore(heading, management);
-    management.hidden = false;
-    management.removeAttribute('aria-hidden');
-    management.classList.add('management-panel');
-  }
 })();
 </script>
 </body>
