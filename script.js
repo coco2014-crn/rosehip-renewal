@@ -16,6 +16,7 @@ if(footer){const serviceNav=footer.querySelectorAll('.footer-group')[1];if(servi
 document.querySelectorAll('.site-header .reserve-link,.site-header .mobile-reserve,.mobile-menu a[href="#reservation"]').forEach(link=>{if(!document.body.classList.contains('reserve-page'))link.href='./reserve.html'});
 document.querySelectorAll('.recruit-actions a[href="#reservation"],section[id="reservation"] a[href*="#reservation"]').forEach(link=>{if(!document.body.classList.contains('recruit-page'))link.href='./reserve.html'});
 document.querySelectorAll('.footer a').forEach(link=>{if(link.textContent.includes('ROSE HIP WEB予約'))link.href='https://rosehip.plus2.vc/sprsv/contents_select.php';});
+document.querySelectorAll('.footer-recruit>a:last-child,.footer-bottom>a').forEach(link=>{const match=link.textContent.match(/(.*?)([→↑])$/);if(match)link.innerHTML=`${match[1]}<span class="arrow ${match[2]==='↑'?'arrow--up':'arrow--right'}" aria-hidden="true">${match[2]}</span>`;});
 const heroVideos=[...document.querySelectorAll('.hero-video')];
 if(heroVideos.length){
   const maxPlayAttempts=3;
