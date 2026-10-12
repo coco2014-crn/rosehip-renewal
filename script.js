@@ -16,5 +16,27 @@ if(footer){const serviceNav=footer.querySelectorAll('.footer-group')[1];if(servi
 document.querySelectorAll('.site-header .reserve-link,.site-header .mobile-reserve,.mobile-menu a[href="#reservation"]').forEach(link=>{if(!document.body.classList.contains('reserve-page'))link.href='./reserve.html'});
 document.querySelectorAll('.recruit-actions a[href="#reservation"],section[id="reservation"] a[href*="#reservation"]').forEach(link=>{if(!document.body.classList.contains('recruit-page'))link.href='./reserve.html'});
 document.querySelectorAll('.footer a').forEach(link=>{if(link.textContent.includes('ROSE HIP WEB予約'))link.href='https://rosehip.plus2.vc/sprsv/contents_select.php';});
+const heroVideos=[...document.querySelectorAll('.hero-video')];
+if(heroVideos.length){
+  const maxPlayAttempts=3;
+  const playbackState=new WeakMap();
+  const isMobile=()=>window.matchMedia('(max-width:700px)').matches;
+  const isActive=video=>video.classList.contains('hero-video-sp')===isMobile();
+  const stateFor=video=>{let state=playbackState.get(video);if(!state){state={attempts:0,timer:0,pending:false};playbackState.set(video,state)}return state};
+  const clearRetry=video=>{const state=stateFor(video);clearTimeout(state.timer);state.timer=0;state.pending=false};
+  const playSafely=video=>{
+    if(!isActive(video)||document.visibilityState==='hidden')return;
+    const state=stateFor(video);if(state.pending||!video.paused||state.attempts>=maxPlayAttempts)return;
+    state.pending=true;state.attempts+=1;
+    const result=video.play();
+    if(result?.then)result.then(()=>{state.pending=false}).catch(()=>{state.pending=false;if(state.attempts<maxPlayAttempts){state.timer=setTimeout(()=>{state.timer=0;playSafely(video)},1200)}});
+  };
+  const syncHeroVideos=()=>heroVideos.forEach(video=>{if(isActive(video)){stateFor(video).attempts=0;playSafely(video)}else{clearRetry(video);stateFor(video).attempts=0;video.pause()}});
+  heroVideos.forEach(video=>{video.addEventListener('playing',()=>{const state=stateFor(video);state.attempts=0;state.pending=false;clearRetry(video)});['loadeddata','canplay','stalled','suspend','error','pause'].forEach(event=>video.addEventListener(event,()=>{if(event!=='pause'||isActive(video))playSafely(video)}));});
+  document.addEventListener('visibilitychange',syncHeroVideos);
+  window.matchMedia('(max-width:700px)').addEventListener('change',syncHeroVideos);
+  syncHeroVideos();
+}
+document.querySelectorAll('.footer-social a').forEach(link=>{const label=link.textContent.trim();const icons={Instagram:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',Facebook:'<path d="M14 21v-8h3l.5-3H14V8.2c0-1 .3-1.7 1.8-1.7H18V3.8c-.5-.1-1.4-.2-2.5-.2C13 3.6 11 5.1 11 8v2H8v3h3v8h3z"/>',X:'<path d="M4 4h4.2l4 5.3L16.8 4H20l-6.3 7.3L20 20h-4.2l-4.3-5.7L6.7 20H4l6.1-7.1L4 4zm3 2 8.9 12h1.1L8.1 6H7z"/>',LINE:'<path d="M20.5 11.2c0 4.1-3.8 7.4-8.5 7.4-1 0-2-.2-2.9-.5L5 20l.9-3.2c-1.5-1.3-2.4-3-2.4-4.9C3.5 8 7.3 4.7 12 4.7s8.5 2.4 8.5 6.5z"/><path class="footer-social-line" d="M8 11v2m3-2v2m3-2v2m3-2v2"/>'};link.setAttribute('aria-label',`${label}（ROSE HIP公式）`);link.innerHTML=`<svg viewBox="0 0 24 24" aria-hidden="true">${icons[label]}</svg>`});
 document.querySelectorAll('[data-contact-form]').forEach(form=>{const endpoint=form.dataset.endpoint?.trim();const status=form.querySelector('.form-status');const button=form.querySelector('button[type="submit"]');if(!endpoint){form.addEventListener('submit',event=>{event.preventDefault();if(status)status.textContent='送信機能は本番環境接続後に有効になります。';});return}form.addEventListener('submit',async event=>{event.preventDefault();if(!form.reportValidity())return;button.disabled=true;if(status)status.textContent='送信中…';try{const response=await fetch(endpoint,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});const result=await response.json().catch(()=>({}));if(!response.ok||result.success!==true)throw new Error('request failed');form.reset();if(status)status.textContent='送信が完了しました';}catch(error){if(status)status.textContent='送信できませんでした。時間をおいて再度お試しください。';}finally{button.disabled=false}})});
 const footerReservationGroup=document.querySelector('.footer')?.querySelectorAll('.footer-group')[2];if(footerReservationGroup){const hair=footerReservationGroup.querySelector('a[href*="hotpepper"]');if(hair){hair.textContent='HOT PEPPER BEAUTY｜HAIR'}const eye=document.createElement('a');eye.href='https://beauty.hotpepper.jp/kr/slnH000382965/?cstt=18&wak=KPSC400401_s_link_salontop';eye.target='_blank';eye.rel='noopener noreferrer';eye.textContent='HOT PEPPER BEAUTY｜NAIL & EYE';footerReservationGroup.insertBefore(eye,footerReservationGroup.querySelector('a[href*="rosehip.plus2.vc"]'))}
