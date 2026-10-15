@@ -12,3 +12,7 @@
   .staff-page .member-card-small{width:auto;align-self:stretch}
   .staff-page .staff-member-card:nth-child(8){grid-column:auto;width:auto;justify-self:stretch}
 }
+
+/* Editorial balance for 05 / BEAUTY AT WORK. */
+.beauty-work .work-gallery{grid-template-columns:60% 28%;gap:12%}
+@media(max-width:700px){.beauty-work .work-gallery .work-large{width:88%}}
