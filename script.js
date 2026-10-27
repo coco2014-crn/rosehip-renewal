@@ -69,3 +69,16 @@ if (footerRecruitFinal) {
   recruitLink.textContent = 'VIEW RECRUIT →';
 }
 
+queueMicrotask(() => document.querySelectorAll('.footer-brand').forEach((el) => {
+  const logo = document.createElement('img');
+  logo.className = 'footer-brand-logo';
+  logo.src = './rosehip-logo-favicon-assets/rosehip_brand/rosehip-logo.svg';
+  logo.alt = 'ROSE HIP';
+  const link = document.createElement('a');
+  link.className = el.className;
+  link.href = './index.html';
+  link.setAttribute('aria-label', 'ROSE HIP ホーム');
+  link.append(logo);
+  el.replaceWith(link);
+}));
+
