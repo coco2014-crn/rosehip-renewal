@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   const gallery=document.querySelector('.work-gallery');
   if(gallery){
     const workImages=[
-      ['start.jpg','ROSE HIPでの施術風景'],
-      ['syuurei.jpg','ROSE HIPのスタッフ']
+      ['stylist1.jpg','ROSE HIPでのシャンプー施術風景'],
+      ['stylist2.jpg','スタッフ2名が資料を確認している様子']
     ];
-    gallery.innerHTML=workImages.map(([image,alt],index)=>`<figure class="${index===0?'work-large':'work-small'} staff-photo-placeholder"><img src="./assets/images/recruit/${image}" alt="${alt}" /></figure>`).join('');
+    gallery.innerHTML=workImages.map(([image,alt],index)=>`<figure class="${index===0?'work-large':'work-small'} staff-photo-placeholder"><img src="./assets/images/salon/${image}" alt="${alt}" /></figure>`).join('');
   }
 });

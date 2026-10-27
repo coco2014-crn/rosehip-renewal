@@ -16,3 +16,5 @@
 /* Editorial balance for 05 / BEAUTY AT WORK. */
 .beauty-work .work-gallery{grid-template-columns:60% 28%;gap:12%}
 @media(max-width:700px){.beauty-work .work-gallery .work-large{width:88%}}
+.beauty-work .work-gallery img{object-fit:contain;background:var(--soft)}
+.beauty-work .work-large,.beauty-work .work-small{aspect-ratio:16/9}
