@@ -44,4 +44,18 @@
 .hair-page .price-category .price-list strong .price-discount-label{color:var(--recruit,#c97868)}
 .hair-page .price-category .price-note--discount{color:var(--recruit,#c97868)}
 @media(max-width:700px){.price-category--perm .color-groups{gap:24px}.price-category--perm .color-group h4{font-size:16px;margin-bottom:8px}}
+
+@media (max-width: 340px) {
+  .hair-page .concept-copy h2,
+  .hair-page .menu-heading h2,
+  .hair-page .hair-stylist h2,
+  .hair-page .first-visit h2,
+  .hair-page .hair-reservation h2 { word-break: normal; overflow-wrap: anywhere; }
+  .hair-page .price-list > div { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; align-items: baseline; }
+  .hair-page .price-list > div > span:first-child { grid-column: 1 / -1; min-width: 0; word-break: normal; overflow-wrap: anywhere; }
+  .hair-page .price-list > div > em { grid-column: 1; white-space: nowrap; }
+  .hair-page .price-list > div > strong { grid-column: 2; white-space: nowrap; text-align: right; }
+}
+
+@media (max-width: 700px) { .hair-page .concept-copy h2 { word-break: normal; overflow-wrap: anywhere; } }
 @media(max-width:700px){.price-category--perm .color-group:first-child{padding-bottom:10px}.price-category--treatment .treatment-group{margin-top:24px}.price-category--treatment .treatment-group h4{font-size:16px;margin-bottom:8px}}
